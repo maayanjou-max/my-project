@@ -1,0 +1,6 @@
+2025-08-26 20:27:22,133 INFO RPC interface 'supervisor' initialized
+2025-08-26 20:27:22,133 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2025-08-26 20:27:22,135 INFO daemonizing the supervisord process
+2025-08-26 20:27:22,136 INFO supervisord started with pid 1735
+2025-08-26 20:27:23,139 INFO spawned: 'drug_agent' with pid 1737
+2025-08-26 20:27:24,569 INFO success: drug_agent entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
