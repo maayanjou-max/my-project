@@ -1,0 +1,60 @@
+
+    🏥 סוכן מידע תרופות / Drug Information Agent
+    
+    📡 השירות רץ על פורט: 5000
+    🌐 כתובת: http://0.0.0.0:5000
+    🔍 מקורות מהימנים: MedlinePlus, MicroMedex, UpToDate
+    
+    לחיפוש תרופה: POST /search
+    API: GET /api/drug/<drug_name>
+    
+ * Serving Flask app 'app'
+ * Debug mode: off
+
+    🏥 סוכן מידע תרופות / Drug Information Agent
+    
+    📡 השירות רץ על פורט: 5000
+    🌐 כתובת: http://0.0.0.0:5000
+    🔍 מקורות מהימנים: MedlinePlus, MicroMedex, UpToDate
+    
+    לחיפוש תרופה: POST /search
+    API: GET /api/drug/<drug_name>
+    
+ * Serving Flask app 'app'
+ * Debug mode: off
+
+    🏥 סוכן מידע תרופות / Drug Information Agent
+    
+    📡 השירות רץ על פורט: 5000
+    🌐 כתובת: http://0.0.0.0:5000
+    🔍 מקורות מהימנים: MedlinePlus, MicroMedex, UpToDate
+    
+    לחיפוש תרופה: POST /search
+    API: GET /api/drug/<drug_name>
+    
+ * Serving Flask app 'app'
+ * Debug mode: off
+
+    🏥 סוכן מידע תרופות / Drug Information Agent
+    
+    📡 השירות רץ על פורט: 5000
+    🌐 כתובת: http://0.0.0.0:5000
+    🔍 מקורות מהימנים: MedlinePlus, MicroMedex, UpToDate
+    
+    לחיפוש תרופה: POST /search
+    API: GET /api/drug/<drug_name>
+    
+ * Serving Flask app 'app'
+ * Debug mode: off
+
+    🏥 סוכן מידע תרופות / Drug Information Agent
+    
+    📡 השירות רץ על פורט: 5000
+    🌐 כתובת: http://0.0.0.0:5000
+    🔍 מקורות מהימנים: MedlinePlus, MicroMedex, UpToDate
+    
+    לחיפוש תרופה: POST /search
+    API: GET /api/drug/<drug_name>
+    
+ * Serving Flask app 'app'
+ * Debug mode: off

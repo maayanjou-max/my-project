@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סוכן שיחה חכם לתרופות</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .chat-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            max-width: 900px;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chat-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            max-height: calc(85vh - 200px);
+            direction: rtl;
+        }
+        
+        .message {
+            margin-bottom: 1rem;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        .message.user {
+            text-align: left;
+        }
+        
+        .message.bot {
+            text-align: right;
+        }
+        
+        .message-bubble {
+            display: inline-block;
+            max-width: 80%;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            word-wrap: break-word;
+        }
+        
+        .message.user .message-bubble {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .message.bot .message-bubble {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            color: #333;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .chat-input-container {
+            padding: 1rem;
+            border-top: 1px solid #e9ecef;
+            background: white;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .chat-input {
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-input:focus {
+            border-color: #4facfe;
+            box-shadow: 0 0 15px rgba(79, 172, 254, 0.3);
+            outline: none;
+        }
+        
+        .send-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+        
+        .send-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .input-group {
+            position: relative;
+        }
+        
+        .typing-indicator {
+            display: none;
+            padding: 1rem;
+            text-align: center;
+            color: #666;
+        }
+        
+        .typing-dots {
+            display: inline-block;
+        }
+        
+        .typing-dots span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4facfe;
+            margin: 0 2px;
+            animation: typing 1.4s infinite both;
+        }
+        
+        .typing-dots span:nth-child(1) { animation-delay: 0s; }
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .examples {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 15px;
+            margin: 1rem;
+            text-align: center;
+        }
+        
+        .example-btn {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        
+        .example-btn:hover {
+            background: #4facfe;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .answer-content {
+            line-height: 1.6;
+        }
+        
+        .answer-content h4 {
+            color: #4facfe;
+            margin-bottom: 0.5rem;
+        }
+        
+        .answer-content p {
+            margin-bottom: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2><i class="fas fa-robot"></i> סוכן תרופות חכם</h2>
+                <p class="mb-0">שאל אותי כל שאלה על תרופות - אני אענה בדיוק!</p>
+            </div>
+            
+            <div class="examples">
+                <small class="text-muted">דוגמאות לשאלות:</small><br>
+                <span class="example-btn" onclick="askExample('האם פרצטמול בטוח בהריון?')">האם פרצטמול בטוח בהריון?</span>
+                <span class="example-btn" onclick="askExample('מתי לוקחים נורופן - לפני או אחרי אוכל?')">מתי לוקחים נורופן?</span>
+                <span class="example-btn" onclick="askExample('מה התופעות הלוואי של אספירין?')">תופעות לוואי של אספירין</span>
+                <span class="example-btn" onclick="askExample('האם מטפורמין מותר בהנקה?')">מטפורמין בהנקה</span>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-bubble">
+                        <strong>👋 שלום!</strong><br>
+                        אני הסוכן החכם לתרופות. אני יכול לענות על שאלות ספציפיות כמו:<br>
+                        • האם תרופה בטוחה בהריון או הנקה?<br>
+                        • מתי לקחת תרופה - עם או בלי אוכל?<br>
+                        • מה המינון הנכון?<br>
+                        • תופעות לוואי ואינטראקציות<br><br>
+                        <em>שאל אותי כל שאלה!</em> 🤖
+                    </div>
+                </div>
+            </div>
+            
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dots">
+                    הסוכן חושב <span></span><span></span><span></span>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="input-group">
+                    <input type="text" class="chat-input" id="questionInput" 
+                           placeholder="שאל אותי על תרופות... (למשל: האם פרצטמול בטוח בהריון?)"
+                           autocomplete="off">
+                    <button class="send-btn" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // שליחת הודעה בלחיצת Enter
+        document.getElementById('questionInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        function askExample(question) {
+            document.getElementById('questionInput').value = question;
+            sendMessage();
+        }
+        
+        async function sendMessage() {
+            const input = document.getElementById('questionInput');
+            const question = input.value.trim();
+            
+            if (!question) return;
+            
+            // הוספת הודעת המשתמש
+            addMessage(question, 'user');
+            
+            // ניקוי שדה הקלט
+            input.value = '';
+            
+            // הצגת אינדיקטור הקלדה
+            showTyping();
+            
+            try {
+                const response = await fetch('/ask', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: question })
+                });
+                
+                const data = await response.json();
+                
+                // הסתרת אינדיקטור הקלדה
+                hideTyping();
+                
+                if (data.success) {
+                    // הצגת תשובה מוצלחת
+                    addMessage(data.data.answer, 'bot');
+                } else {
+                    // הצגת הודעת שגיאה
+                    const errorMsg = `❌ ${data.message}`;
+                    if (data.suggestion) {
+                        errorMsg += `\n\n💡 ${data.suggestion}`;
+                    }
+                    addMessage(errorMsg, 'bot');
+                }
+                
+            } catch (error) {
+                hideTyping();
+                addMessage('❌ אירעה שגיאה בתקשורת עם השרת. אנא נסה שוב.', 'bot');
+                console.error('Error:', error);
+            }
+        }
+        
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = 'message-bubble';
+            
+            if (sender === 'bot') {
+                // עיבוד תוכן עם Markdown בסיסי
+                bubbleDiv.innerHTML = formatBotMessage(text);
+            } else {
+                bubbleDiv.textContent = text;
+            }
+            
+            messageDiv.appendChild(bubbleDiv);
+            messagesContainer.appendChild(messageDiv);
+            
+            // גלילה למטה
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        function formatBotMessage(text) {
+            // עיבוד בסיסי של Markdown
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // bold
+                .replace(/\n\n/g, '<br><br>')                       // line breaks
+                .replace(/\n/g, '<br>')                             // single line breaks
+                .replace(/^([🤱🍼🕐⏰💊👶⚠️🚨⛔🍷💊📋🎯❌📚⚕️].*?)$/gm, '<p class="mb-2">$1</p>'); // icons as paragraphs
+        }
+        
+        function showTyping() {
+            document.getElementById('typingIndicator').style.display = 'block';
+            const messagesContainer = document.getElementById('chatMessages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        function hideTyping() {
+            document.getElementById('typingIndicator').style.display = 'none';
+        }
+        
+        // Focus על שדה הקלט בטעינת העמוד
+        window.addEventListener('load', function() {
+            document.getElementById('questionInput').focus();
+        });
+    </script>
+</body>
+</html>

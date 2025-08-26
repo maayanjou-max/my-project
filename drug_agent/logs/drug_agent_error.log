@@ -1,0 +1,66 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:43:25] "GET /health HTTP/1.1" 200 -
+INFO:__main__:Processing question: האם פרצטמול בטוח בהריון?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:43:29] "POST /ask HTTP/1.1" 200 -
+INFO:__main__:Processing question: האם זולפט בטוח בהריון?
+INFO:conversational_agent:Attempting multi-source search for: זולפט
+INFO:multi_source_search:Searching Clalit database for: זולפט
+INFO:multi_source_search:No information found for זולפט in Clalit database
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:43:36] "POST /ask HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:__main__:Processing question: אני בהריון, האם בטוח לי לקחת אספירין?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:57:08] "POST /ask HTTP/1.1" 200 -
+INFO:__main__:Processing question: אני לוקחת זולפט, זה בטוח בהנקה?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:57:16] "POST /ask HTTP/1.1" 200 -
+INFO:__main__:Processing question: כמה אדביל אני יכולה לקחת ליום?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:57:22] "POST /ask HTTP/1.1" 200 -
+INFO:__main__:Processing question: אני בחודש שביעי להריון ויש לי כאב ראש נורא, מה אני יכולה לקחת?
+INFO:conversational_agent:Attempting multi-source search for: להריון
+INFO:multi_source_search:Searching Clalit database for: להריון
+INFO:multi_source_search:No information found for להריון in Clalit database
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:57:37] "POST /ask HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:__main__:Processing question: אני בחודש שביעי להריון ויש לי כאב ראש נורא, מה אני יכולה לקחת?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:58:28] "POST /ask HTTP/1.1" 200 -
+INFO:__main__:Processing question: אני מניקה ויש לי דיכאון, איזה תרופה בטוחה?
+INFO:conversational_agent:Attempting multi-source search for: דיכאון
+INFO:multi_source_search:Searching Clalit database for: דיכאון
+INFO:multi_source_search:No information found for דיכאון in Clalit database
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:58:37] "POST /ask HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:__main__:Processing question: אני מניקה ויש לי דיכאון, איזה תרופה בטוחה?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:59:30] "POST /ask HTTP/1.1" 200 -
+INFO:__main__:Processing question: יש לי כאב ראש חזק, מה לקחת?
+INFO:conversational_agent:Attempting multi-source search for: ראש
+INFO:multi_source_search:Searching Clalit database for: ראש
+INFO:multi_source_search:No information found for ראש in Clalit database
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:59:39] "POST /ask HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:__main__:Processing question: יש לי כאב ראש חזק, מה לקחת?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:59:56] "POST /ask HTTP/1.1" 200 -
+INFO:__main__:Processing question: האם ציפרלקס בטוח בהריון?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 22:00:15] "POST /ask HTTP/1.1" 200 -
+INFO:__main__:Processing question: אני בהריון ויש לי בחילות, מה עוזר?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 22:00:15] "POST /ask HTTP/1.1" 200 -
+INFO:__main__:Processing question: כמה פרצטמול לקחת?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 22:00:15] "POST /ask HTTP/1.1" 200 -

@@ -1,0 +1,177 @@
+
+    🏥 סוכן מידע תרופות מופעל בהצלחה!
+    
+    📍 כתובת השרת: http://0.0.0.0:5000
+    🔧 מצב דיבאג: מופעל
+    
+    🔍 מקורות מהימנים:
+       • MedlinePlus (medlineplus.gov)
+       • מאגר תרופות מקומי מוסמך
+       • MicroMedex Solutions
+       • UpToDate
+    
+    📋 נקודות קצה זמינות:
+       • GET  /           - ממשק המשתמש הראשי
+       • POST /search     - חיפוש תרופות
+       • GET  /api/drug/<name> - API למידע תרופות
+       • GET  /health     - בדיקת תקינות
+    
+ * Serving Flask app 'src.app'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (inotify)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 903-792-757
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:05:34] "GET /health HTTP/1.1" 200 -
+INFO:src.app:Searching for drug: פרצטמול
+INFO:enhanced_scraper:Searching MedlinePlus for: פרצטמול
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:05:43] "POST /search HTTP/1.1" 200 -
+INFO:src.app:Searching for drug: aspirin
+INFO:enhanced_scraper:Searching MedlinePlus for: aspirin
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:05:43] "POST /search HTTP/1.1" 200 -
+INFO:src.app:Searching for drug: תרופה_לא_קיימת_12345
+INFO:enhanced_scraper:Searching MedlinePlus for: תרופה_לא_קיימת_12345
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:05:43] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:10:19] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:10:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:src.app:Searching for drug: אספירין
+INFO:enhanced_scraper:Searching MedlinePlus for: אספירין
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:10:43] "POST /search HTTP/1.1" 200 -
+INFO:src.app:Searching for drug: האם מותר לקחת אספירין וקלופידוגרל יחד?
+INFO:enhanced_scraper:Searching MedlinePlus for: האם מותר לקחת אספירין וקלופידוגרל יחד?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:11:11] "POST /search HTTP/1.1" 200 -
+INFO:src.app:Searching for drug: האם צריך לקחת אספירין עם אוכל?
+INFO:enhanced_scraper:Searching MedlinePlus for: האם צריך לקחת אספירין עם אוכל?
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:11:37] "POST /search HTTP/1.1" 200 -
+INFO:src.app:Searching for drug: איבופרופן
+INFO:enhanced_scraper:Searching MedlinePlus for: איבופרופן
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:11:55] "POST /search HTTP/1.1" 200 -
+INFO:src.app:Searching for drug: קדקס
+INFO:enhanced_scraper:Searching MedlinePlus for: קדקס
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 21:12:13] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/comprehensive_drug_database.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/comprehensive_drug_database.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/comprehensive_drug_database.py', reloading
+
+    🏥 סוכן מידע תרופות מופעל בהצלחה!
+    
+    📍 כתובת השרת: http://0.0.0.0:5000
+    🔧 מצב דיבאג: מופעל
+    
+    🔍 מקורות מהימנים:
+       • MedlinePlus (medlineplus.gov)
+       • מאגר תרופות מקומי מוסמך
+       • MicroMedex Solutions
+       • UpToDate
+    
+    📋 נקודות קצה זמינות:
+       • GET  /           - ממשק המשתמש הראשי
+       • POST /search     - חיפוש תרופות
+       • GET  /api/drug/<name> - API למידע תרופות
+       • GET  /health     - בדיקת תקינות
+    
+INFO:werkzeug: * Restarting with watchdog (inotify)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 903-792-757
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/conversational_agent.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/conversational_agent.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/conversational_agent.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/conversational_agent.py', reloading
+
+    🏥 סוכן מידע תרופות מופעל בהצלחה!
+    
+    📍 כתובת השרת: http://0.0.0.0:5000
+    🔧 מצב דיבאג: מופעל
+    
+    🔍 מקורות מהימנים:
+       • MedlinePlus (medlineplus.gov)
+       • מאגר תרופות מקומי מוסמך
+       • MicroMedex Solutions
+       • UpToDate
+    
+    📋 נקודות קצה זמינות:
+       • GET  /           - ממשק המשתמש הראשי
+       • POST /search     - חיפוש תרופות
+       • GET  /api/drug/<name> - API למידע תרופות
+       • GET  /health     - בדיקת תקינות
+    
+INFO:werkzeug: * Restarting with watchdog (inotify)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 903-792-757
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/app.py', reloading
+
+    🏥 סוכן מידע תרופות מופעל בהצלחה!
+    
+    📍 כתובת השרת: http://0.0.0.0:5000
+    🔧 מצב דיבאג: מופעל
+    
+    🔍 מקורות מהימנים:
+       • MedlinePlus (medlineplus.gov)
+       • מאגר תרופות מקומי מוסמך
+       • MicroMedex Solutions
+       • UpToDate
+    
+    📋 נקודות קצה זמינות:
+       • GET  /           - ממשק המשתמש הראשי
+       • POST /search     - חיפוש תרופות
+       • GET  /api/drug/<name> - API למידע תרופות
+       • GET  /health     - בדיקת תקינות
+    
+INFO:werkzeug: * Restarting with watchdog (inotify)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 903-792-757
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/app.py', reloading
+
+    🏥 סוכן מידע תרופות מופעל בהצלחה!
+    
+    📍 כתובת השרת: http://0.0.0.0:5000
+    🔧 מצב דיבאג: מופעל
+    
+    🔍 מקורות מהימנים:
+       • MedlinePlus (medlineplus.gov)
+       • מאגר תרופות מקומי מוסמך
+       • MicroMedex Solutions
+       • UpToDate
+    
+    📋 נקודות קצה זמינות:
+       • GET  /           - ממשק המשתמש הראשי
+       • POST /search     - חיפוש תרופות
+       • GET  /api/drug/<name> - API למידע תרופות
+       • GET  /health     - בדיקת תקינות
+    
+INFO:werkzeug: * Restarting with watchdog (inotify)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 903-792-757
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/drug_agent/src/app.py', reloading
+
+    🏥 סוכן מידע תרופות מופעל בהצלחה!
+    
+    📍 כתובת השרת: http://0.0.0.0:5000
+    🔧 מצב דיבאג: מופעל
+    
+    🔍 מקורות מהימנים:
+       • MedlinePlus (medlineplus.gov)
+       • מאגר תרופות מקומי מוסמך
+       • MicroMedex Solutions
+       • UpToDate
+    
+    📋 נקודות קצה זמינות:
+       • GET  /           - ממשק המשתמש הראשי
+       • POST /search     - חיפוש תרופות
+       • GET  /api/drug/<name> - API למידע תרופות
+       • GET  /health     - בדיקת תקינות
+    
+INFO:werkzeug: * Restarting with watchdog (inotify)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 903-792-757

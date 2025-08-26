@@ -7,3 +7,9 @@
 2025-08-26 21:02:53,239 WARN received SIGTERM indicating exit request
 2025-08-26 21:02:53,239 INFO waiting for drug_agent to die
 2025-08-26 21:02:53,242 WARN stopped: drug_agent (terminated by SIGTERM)
+2025-08-26 21:43:16,011 INFO RPC interface 'supervisor' initialized
+2025-08-26 21:43:16,011 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2025-08-26 21:43:16,014 INFO daemonizing the supervisord process
+2025-08-26 21:43:16,015 INFO supervisord started with pid 12832
+2025-08-26 21:43:17,020 INFO spawned: 'drug_agent' with pid 12836
+2025-08-26 21:43:18,441 INFO success: drug_agent entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

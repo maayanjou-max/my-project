@@ -1,0 +1,15 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 20:27:33] "GET /health HTTP/1.1" 200 -
+INFO:__main__:Searching for drug: פרצטמול
+INFO:advanced_scraper:Comprehensive search for: פרצטמול
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 20:27:41] "POST /search HTTP/1.1" 200 -
+INFO:__main__:Searching for drug: תרופה לא קיימת
+INFO:advanced_scraper:Comprehensive search for: תרופה לא קיימת
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 20:27:46] "POST /search HTTP/1.1" 200 -
+INFO:__main__:Searching for drug: ibuprofen
+INFO:advanced_scraper:Comprehensive search for: ibuprofen
+INFO:werkzeug:10.12.153.242 - - [26/Aug/2025 20:27:52] "POST /search HTTP/1.1" 200 -
